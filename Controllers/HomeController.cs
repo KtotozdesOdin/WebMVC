@@ -5,14 +5,19 @@ namespace WebMVCR1.Controllers
 {
     public class HomeController : Controller
     {
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-        public string Index(string hel)
+        public ViewResult Index()
         {
-            string Greeting = ModelClass.ModelHello() + ", " + hel; 
-            return Greeting;
+            int hour = DateTime.Now.Hour;
+            ViewBag.Greeting = hour < 12 ? "Доброе утро" : "Добрый день";
+            ViewData["Mes"] = "хорошего настроения";
+            return View();
         }
+
+        //    public string Index(string hel)
+        //    {
+        //        string Greeting = ModelClass.ModelHello() + ", " + hel; 
+        //        return Greeting;
+        //    }
+        //}
     }
 }
