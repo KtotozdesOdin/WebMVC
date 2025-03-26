@@ -12,6 +12,17 @@ namespace WebMVCR1.Controllers
             ViewData["Mes"] = "хорошего настроения";
             return View();
         }
+        [HttpGet]
+        public ViewResult InputData()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult InputData(Person p)
+        {
+            return View("Hello", p);
+        }
 
         //    public string Index(string hel)
         //    {
